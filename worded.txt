@@ -1,0 +1,742 @@
+1 brit_in_house_1
+2 brit_in_house_2
+3 brit_in_house_3
+4 brit_in_house_4
+5 brit_in_house_5
+6 swede_in_house_1
+7 swede_in_house_2
+8 swede_in_house_3
+9 swede_in_house_4
+10 swede_in_house_5
+11 dane_in_house_1
+12 dane_in_house_2
+13 dane_in_house_3
+14 dane_in_house_4
+15 dane_in_house_5
+16 norwegian_in_house_1
+17 norwegian_in_house_2
+18 norwegian_in_house_3
+19 norwegian_in_house_4
+20 norwegian_in_house_5
+21 german_in_house_1
+22 german_in_house_2
+23 german_in_house_3
+24 german_in_house_4
+25 german_in_house_5
+26 tea_in_house_1
+27 tea_in_house_2
+28 tea_in_house_3
+29 tea_in_house_4
+30 tea_in_house_5
+31 coffee_in_house_1
+32 coffee_in_house_2
+33 coffee_in_house_3
+34 coffee_in_house_4
+35 coffee_in_house_5
+36 milk_in_house_1
+37 milk_in_house_2
+38 milk_in_house_3
+39 milk_in_house_4
+40 milk_in_house_5
+41 beer_in_house_1
+42 beer_in_house_2
+43 beer_in_house_3
+44 beer_in_house_4
+45 beer_in_house_5
+46 water_in_house_1
+47 water_in_house_2
+48 water_in_house_3
+49 water_in_house_4
+50 water_in_house_5
+51 red_in_house_1
+52 red_in_house_2
+53 red_in_house_3
+54 red_in_house_4
+55 red_in_house_5
+56 white_in_house_1
+57 white_in_house_2
+58 white_in_house_3
+59 white_in_house_4
+60 white_in_house_5
+61 green_in_house_1
+62 green_in_house_2
+63 green_in_house_3
+64 green_in_house_4
+65 green_in_house_5
+66 yellow_in_house_1
+67 yellow_in_house_2
+68 yellow_in_house_3
+69 yellow_in_house_4
+70 yellow_in_house_5
+71 blue_in_house_1
+72 blue_in_house_2
+73 blue_in_house_3
+74 blue_in_house_4
+75 blue_in_house_5
+76 pall_in_house_1
+77 pall_in_house_2
+78 pall_in_house_3
+79 pall_in_house_4
+80 pall_in_house_5
+81 dunhill_in_house_1
+82 dunhill_in_house_2
+83 dunhill_in_house_3
+84 dunhill_in_house_4
+85 dunhill_in_house_5
+86 blend_in_house_1
+87 blend_in_house_2
+88 blend_in_house_3
+89 blend_in_house_4
+90 blend_in_house_5
+91 bluemaster_in_house_1
+92 bluemaster_in_house_2
+93 bluemaster_in_house_3
+94 bluemaster_in_house_4
+95 bluemaster_in_house_5
+96 prince_in_house_1
+97 prince_in_house_2
+98 prince_in_house_3
+99 prince_in_house_4
+100 prince_in_house_5
+101 dog_in_house_1
+102 dog_in_house_2
+103 dog_in_house_3
+104 dog_in_house_4
+105 dog_in_house_5
+106 cat_in_house_1
+107 cat_in_house_2
+108 cat_in_house_3
+109 cat_in_house_4
+110 cat_in_house_5
+111 horse_in_house_1
+112 horse_in_house_2
+113 horse_in_house_3
+114 horse_in_house_4
+115 horse_in_house_5
+116 bird_in_house_1
+117 bird_in_house_2
+118 bird_in_house_3
+119 bird_in_house_4
+120 bird_in_house_5
+121 fish_in_house_1
+122 fish_in_house_2
+123 fish_in_house_3
+124 fish_in_house_4
+125 fish_in_house_5
+brit_in_house_1 v brit_in_house_2 v brit_in_house_3 v brit_in_house_4 v brit_in_house_5
+(-brit_in_house_2 v -brit_in_house_1)
+(-brit_in_house_3 v -brit_in_house_1)
+(-brit_in_house_3 v -brit_in_house_2)
+(-brit_in_house_4 v -brit_in_house_1)
+(-brit_in_house_4 v -brit_in_house_2)
+(-brit_in_house_4 v -brit_in_house_3)
+(-brit_in_house_5 v -brit_in_house_1)
+(-brit_in_house_5 v -brit_in_house_2)
+(-brit_in_house_5 v -brit_in_house_3)
+(-brit_in_house_5 v -brit_in_house_4)
+swede_in_house_1 v swede_in_house_2 v swede_in_house_3 v swede_in_house_4 v swede_in_house_5
+(-swede_in_house_2 v -swede_in_house_1)
+(-swede_in_house_3 v -swede_in_house_1)
+(-swede_in_house_3 v -swede_in_house_2)
+(-swede_in_house_4 v -swede_in_house_1)
+(-swede_in_house_4 v -swede_in_house_2)
+(-swede_in_house_4 v -swede_in_house_3)
+(-swede_in_house_5 v -swede_in_house_1)
+(-swede_in_house_5 v -swede_in_house_2)
+(-swede_in_house_5 v -swede_in_house_3)
+(-swede_in_house_5 v -swede_in_house_4)
+dane_in_house_1 v dane_in_house_2 v dane_in_house_3 v dane_in_house_4 v dane_in_house_5
+(-dane_in_house_2 v -dane_in_house_1)
+(-dane_in_house_3 v -dane_in_house_1)
+(-dane_in_house_3 v -dane_in_house_2)
+(-dane_in_house_4 v -dane_in_house_1)
+(-dane_in_house_4 v -dane_in_house_2)
+(-dane_in_house_4 v -dane_in_house_3)
+(-dane_in_house_5 v -dane_in_house_1)
+(-dane_in_house_5 v -dane_in_house_2)
+(-dane_in_house_5 v -dane_in_house_3)
+(-dane_in_house_5 v -dane_in_house_4)
+norwegian_in_house_1 v norwegian_in_house_2 v norwegian_in_house_3 v norwegian_in_house_4 v norwegian_in_house_5
+(-norwegian_in_house_2 v -norwegian_in_house_1)
+(-norwegian_in_house_3 v -norwegian_in_house_1)
+(-norwegian_in_house_3 v -norwegian_in_house_2)
+(-norwegian_in_house_4 v -norwegian_in_house_1)
+(-norwegian_in_house_4 v -norwegian_in_house_2)
+(-norwegian_in_house_4 v -norwegian_in_house_3)
+(-norwegian_in_house_5 v -norwegian_in_house_1)
+(-norwegian_in_house_5 v -norwegian_in_house_2)
+(-norwegian_in_house_5 v -norwegian_in_house_3)
+(-norwegian_in_house_5 v -norwegian_in_house_4)
+german_in_house_1 v german_in_house_2 v german_in_house_3 v german_in_house_4 v german_in_house_5
+(-german_in_house_2 v -german_in_house_1)
+(-german_in_house_3 v -german_in_house_1)
+(-german_in_house_3 v -german_in_house_2)
+(-german_in_house_4 v -german_in_house_1)
+(-german_in_house_4 v -german_in_house_2)
+(-german_in_house_4 v -german_in_house_3)
+(-german_in_house_5 v -german_in_house_1)
+(-german_in_house_5 v -german_in_house_2)
+(-german_in_house_5 v -german_in_house_3)
+(-german_in_house_5 v -german_in_house_4)
+brit_in_house_1 v swede_in_house_1 v dane_in_house_1 v norwegian_in_house_1 v german_in_house_1
+(-swede_in_house_1 v -brit_in_house_1)
+(-dane_in_house_1 v -brit_in_house_1)
+(-dane_in_house_1 v -swede_in_house_1)
+(-norwegian_in_house_1 v -brit_in_house_1)
+(-norwegian_in_house_1 v -swede_in_house_1)
+(-norwegian_in_house_1 v -dane_in_house_1)
+(-german_in_house_1 v -brit_in_house_1)
+(-german_in_house_1 v -swede_in_house_1)
+(-german_in_house_1 v -dane_in_house_1)
+(-german_in_house_1 v -norwegian_in_house_1)
+brit_in_house_2 v swede_in_house_2 v dane_in_house_2 v norwegian_in_house_2 v german_in_house_2
+(-swede_in_house_2 v -brit_in_house_2)
+(-dane_in_house_2 v -brit_in_house_2)
+(-dane_in_house_2 v -swede_in_house_2)
+(-norwegian_in_house_2 v -brit_in_house_2)
+(-norwegian_in_house_2 v -swede_in_house_2)
+(-norwegian_in_house_2 v -dane_in_house_2)
+(-german_in_house_2 v -brit_in_house_2)
+(-german_in_house_2 v -swede_in_house_2)
+(-german_in_house_2 v -dane_in_house_2)
+(-german_in_house_2 v -norwegian_in_house_2)
+brit_in_house_3 v swede_in_house_3 v dane_in_house_3 v norwegian_in_house_3 v german_in_house_3
+(-swede_in_house_3 v -brit_in_house_3)
+(-dane_in_house_3 v -brit_in_house_3)
+(-dane_in_house_3 v -swede_in_house_3)
+(-norwegian_in_house_3 v -brit_in_house_3)
+(-norwegian_in_house_3 v -swede_in_house_3)
+(-norwegian_in_house_3 v -dane_in_house_3)
+(-german_in_house_3 v -brit_in_house_3)
+(-german_in_house_3 v -swede_in_house_3)
+(-german_in_house_3 v -dane_in_house_3)
+(-german_in_house_3 v -norwegian_in_house_3)
+brit_in_house_4 v swede_in_house_4 v dane_in_house_4 v norwegian_in_house_4 v german_in_house_4
+(-swede_in_house_4 v -brit_in_house_4)
+(-dane_in_house_4 v -brit_in_house_4)
+(-dane_in_house_4 v -swede_in_house_4)
+(-norwegian_in_house_4 v -brit_in_house_4)
+(-norwegian_in_house_4 v -swede_in_house_4)
+(-norwegian_in_house_4 v -dane_in_house_4)
+(-german_in_house_4 v -brit_in_house_4)
+(-german_in_house_4 v -swede_in_house_4)
+(-german_in_house_4 v -dane_in_house_4)
+(-german_in_house_4 v -norwegian_in_house_4)
+brit_in_house_5 v swede_in_house_5 v dane_in_house_5 v norwegian_in_house_5 v german_in_house_5
+(-swede_in_house_5 v -brit_in_house_5)
+(-dane_in_house_5 v -brit_in_house_5)
+(-dane_in_house_5 v -swede_in_house_5)
+(-norwegian_in_house_5 v -brit_in_house_5)
+(-norwegian_in_house_5 v -swede_in_house_5)
+(-norwegian_in_house_5 v -dane_in_house_5)
+(-german_in_house_5 v -brit_in_house_5)
+(-german_in_house_5 v -swede_in_house_5)
+(-german_in_house_5 v -dane_in_house_5)
+(-german_in_house_5 v -norwegian_in_house_5)
+tea_in_house_1 v tea_in_house_2 v tea_in_house_3 v tea_in_house_4 v tea_in_house_5
+(-tea_in_house_2 v -tea_in_house_1)
+(-tea_in_house_3 v -tea_in_house_1)
+(-tea_in_house_3 v -tea_in_house_2)
+(-tea_in_house_4 v -tea_in_house_1)
+(-tea_in_house_4 v -tea_in_house_2)
+(-tea_in_house_4 v -tea_in_house_3)
+(-tea_in_house_5 v -tea_in_house_1)
+(-tea_in_house_5 v -tea_in_house_2)
+(-tea_in_house_5 v -tea_in_house_3)
+(-tea_in_house_5 v -tea_in_house_4)
+coffee_in_house_1 v coffee_in_house_2 v coffee_in_house_3 v coffee_in_house_4 v coffee_in_house_5
+(-coffee_in_house_2 v -coffee_in_house_1)
+(-coffee_in_house_3 v -coffee_in_house_1)
+(-coffee_in_house_3 v -coffee_in_house_2)
+(-coffee_in_house_4 v -coffee_in_house_1)
+(-coffee_in_house_4 v -coffee_in_house_2)
+(-coffee_in_house_4 v -coffee_in_house_3)
+(-coffee_in_house_5 v -coffee_in_house_1)
+(-coffee_in_house_5 v -coffee_in_house_2)
+(-coffee_in_house_5 v -coffee_in_house_3)
+(-coffee_in_house_5 v -coffee_in_house_4)
+milk_in_house_1 v milk_in_house_2 v milk_in_house_3 v milk_in_house_4 v milk_in_house_5
+(-milk_in_house_2 v -milk_in_house_1)
+(-milk_in_house_3 v -milk_in_house_1)
+(-milk_in_house_3 v -milk_in_house_2)
+(-milk_in_house_4 v -milk_in_house_1)
+(-milk_in_house_4 v -milk_in_house_2)
+(-milk_in_house_4 v -milk_in_house_3)
+(-milk_in_house_5 v -milk_in_house_1)
+(-milk_in_house_5 v -milk_in_house_2)
+(-milk_in_house_5 v -milk_in_house_3)
+(-milk_in_house_5 v -milk_in_house_4)
+beer_in_house_1 v beer_in_house_2 v beer_in_house_3 v beer_in_house_4 v beer_in_house_5
+(-beer_in_house_2 v -beer_in_house_1)
+(-beer_in_house_3 v -beer_in_house_1)
+(-beer_in_house_3 v -beer_in_house_2)
+(-beer_in_house_4 v -beer_in_house_1)
+(-beer_in_house_4 v -beer_in_house_2)
+(-beer_in_house_4 v -beer_in_house_3)
+(-beer_in_house_5 v -beer_in_house_1)
+(-beer_in_house_5 v -beer_in_house_2)
+(-beer_in_house_5 v -beer_in_house_3)
+(-beer_in_house_5 v -beer_in_house_4)
+water_in_house_1 v water_in_house_2 v water_in_house_3 v water_in_house_4 v water_in_house_5
+(-water_in_house_2 v -water_in_house_1)
+(-water_in_house_3 v -water_in_house_1)
+(-water_in_house_3 v -water_in_house_2)
+(-water_in_house_4 v -water_in_house_1)
+(-water_in_house_4 v -water_in_house_2)
+(-water_in_house_4 v -water_in_house_3)
+(-water_in_house_5 v -water_in_house_1)
+(-water_in_house_5 v -water_in_house_2)
+(-water_in_house_5 v -water_in_house_3)
+(-water_in_house_5 v -water_in_house_4)
+tea_in_house_1 v coffee_in_house_1 v milk_in_house_1 v beer_in_house_1 v water_in_house_1
+(-coffee_in_house_1 v -tea_in_house_1)
+(-milk_in_house_1 v -tea_in_house_1)
+(-milk_in_house_1 v -coffee_in_house_1)
+(-beer_in_house_1 v -tea_in_house_1)
+(-beer_in_house_1 v -coffee_in_house_1)
+(-beer_in_house_1 v -milk_in_house_1)
+(-water_in_house_1 v -tea_in_house_1)
+(-water_in_house_1 v -coffee_in_house_1)
+(-water_in_house_1 v -milk_in_house_1)
+(-water_in_house_1 v -beer_in_house_1)
+tea_in_house_2 v coffee_in_house_2 v milk_in_house_2 v beer_in_house_2 v water_in_house_2
+(-coffee_in_house_2 v -tea_in_house_2)
+(-milk_in_house_2 v -tea_in_house_2)
+(-milk_in_house_2 v -coffee_in_house_2)
+(-beer_in_house_2 v -tea_in_house_2)
+(-beer_in_house_2 v -coffee_in_house_2)
+(-beer_in_house_2 v -milk_in_house_2)
+(-water_in_house_2 v -tea_in_house_2)
+(-water_in_house_2 v -coffee_in_house_2)
+(-water_in_house_2 v -milk_in_house_2)
+(-water_in_house_2 v -beer_in_house_2)
+tea_in_house_3 v coffee_in_house_3 v milk_in_house_3 v beer_in_house_3 v water_in_house_3
+(-coffee_in_house_3 v -tea_in_house_3)
+(-milk_in_house_3 v -tea_in_house_3)
+(-milk_in_house_3 v -coffee_in_house_3)
+(-beer_in_house_3 v -tea_in_house_3)
+(-beer_in_house_3 v -coffee_in_house_3)
+(-beer_in_house_3 v -milk_in_house_3)
+(-water_in_house_3 v -tea_in_house_3)
+(-water_in_house_3 v -coffee_in_house_3)
+(-water_in_house_3 v -milk_in_house_3)
+(-water_in_house_3 v -beer_in_house_3)
+tea_in_house_4 v coffee_in_house_4 v milk_in_house_4 v beer_in_house_4 v water_in_house_4
+(-coffee_in_house_4 v -tea_in_house_4)
+(-milk_in_house_4 v -tea_in_house_4)
+(-milk_in_house_4 v -coffee_in_house_4)
+(-beer_in_house_4 v -tea_in_house_4)
+(-beer_in_house_4 v -coffee_in_house_4)
+(-beer_in_house_4 v -milk_in_house_4)
+(-water_in_house_4 v -tea_in_house_4)
+(-water_in_house_4 v -coffee_in_house_4)
+(-water_in_house_4 v -milk_in_house_4)
+(-water_in_house_4 v -beer_in_house_4)
+tea_in_house_5 v coffee_in_house_5 v milk_in_house_5 v beer_in_house_5 v water_in_house_5
+(-coffee_in_house_5 v -tea_in_house_5)
+(-milk_in_house_5 v -tea_in_house_5)
+(-milk_in_house_5 v -coffee_in_house_5)
+(-beer_in_house_5 v -tea_in_house_5)
+(-beer_in_house_5 v -coffee_in_house_5)
+(-beer_in_house_5 v -milk_in_house_5)
+(-water_in_house_5 v -tea_in_house_5)
+(-water_in_house_5 v -coffee_in_house_5)
+(-water_in_house_5 v -milk_in_house_5)
+(-water_in_house_5 v -beer_in_house_5)
+red_in_house_1 v red_in_house_2 v red_in_house_3 v red_in_house_4 v red_in_house_5
+(-red_in_house_2 v -red_in_house_1)
+(-red_in_house_3 v -red_in_house_1)
+(-red_in_house_3 v -red_in_house_2)
+(-red_in_house_4 v -red_in_house_1)
+(-red_in_house_4 v -red_in_house_2)
+(-red_in_house_4 v -red_in_house_3)
+(-red_in_house_5 v -red_in_house_1)
+(-red_in_house_5 v -red_in_house_2)
+(-red_in_house_5 v -red_in_house_3)
+(-red_in_house_5 v -red_in_house_4)
+white_in_house_1 v white_in_house_2 v white_in_house_3 v white_in_house_4 v white_in_house_5
+(-white_in_house_2 v -white_in_house_1)
+(-white_in_house_3 v -white_in_house_1)
+(-white_in_house_3 v -white_in_house_2)
+(-white_in_house_4 v -white_in_house_1)
+(-white_in_house_4 v -white_in_house_2)
+(-white_in_house_4 v -white_in_house_3)
+(-white_in_house_5 v -white_in_house_1)
+(-white_in_house_5 v -white_in_house_2)
+(-white_in_house_5 v -white_in_house_3)
+(-white_in_house_5 v -white_in_house_4)
+green_in_house_1 v green_in_house_2 v green_in_house_3 v green_in_house_4 v green_in_house_5
+(-green_in_house_2 v -green_in_house_1)
+(-green_in_house_3 v -green_in_house_1)
+(-green_in_house_3 v -green_in_house_2)
+(-green_in_house_4 v -green_in_house_1)
+(-green_in_house_4 v -green_in_house_2)
+(-green_in_house_4 v -green_in_house_3)
+(-green_in_house_5 v -green_in_house_1)
+(-green_in_house_5 v -green_in_house_2)
+(-green_in_house_5 v -green_in_house_3)
+(-green_in_house_5 v -green_in_house_4)
+yellow_in_house_1 v yellow_in_house_2 v yellow_in_house_3 v yellow_in_house_4 v yellow_in_house_5
+(-yellow_in_house_2 v -yellow_in_house_1)
+(-yellow_in_house_3 v -yellow_in_house_1)
+(-yellow_in_house_3 v -yellow_in_house_2)
+(-yellow_in_house_4 v -yellow_in_house_1)
+(-yellow_in_house_4 v -yellow_in_house_2)
+(-yellow_in_house_4 v -yellow_in_house_3)
+(-yellow_in_house_5 v -yellow_in_house_1)
+(-yellow_in_house_5 v -yellow_in_house_2)
+(-yellow_in_house_5 v -yellow_in_house_3)
+(-yellow_in_house_5 v -yellow_in_house_4)
+blue_in_house_1 v blue_in_house_2 v blue_in_house_3 v blue_in_house_4 v blue_in_house_5
+(-blue_in_house_2 v -blue_in_house_1)
+(-blue_in_house_3 v -blue_in_house_1)
+(-blue_in_house_3 v -blue_in_house_2)
+(-blue_in_house_4 v -blue_in_house_1)
+(-blue_in_house_4 v -blue_in_house_2)
+(-blue_in_house_4 v -blue_in_house_3)
+(-blue_in_house_5 v -blue_in_house_1)
+(-blue_in_house_5 v -blue_in_house_2)
+(-blue_in_house_5 v -blue_in_house_3)
+(-blue_in_house_5 v -blue_in_house_4)
+red_in_house_1 v white_in_house_1 v green_in_house_1 v yellow_in_house_1 v blue_in_house_1
+(-white_in_house_1 v -red_in_house_1)
+(-green_in_house_1 v -red_in_house_1)
+(-green_in_house_1 v -white_in_house_1)
+(-yellow_in_house_1 v -red_in_house_1)
+(-yellow_in_house_1 v -white_in_house_1)
+(-yellow_in_house_1 v -green_in_house_1)
+(-blue_in_house_1 v -red_in_house_1)
+(-blue_in_house_1 v -white_in_house_1)
+(-blue_in_house_1 v -green_in_house_1)
+(-blue_in_house_1 v -yellow_in_house_1)
+red_in_house_2 v white_in_house_2 v green_in_house_2 v yellow_in_house_2 v blue_in_house_2
+(-white_in_house_2 v -red_in_house_2)
+(-green_in_house_2 v -red_in_house_2)
+(-green_in_house_2 v -white_in_house_2)
+(-yellow_in_house_2 v -red_in_house_2)
+(-yellow_in_house_2 v -white_in_house_2)
+(-yellow_in_house_2 v -green_in_house_2)
+(-blue_in_house_2 v -red_in_house_2)
+(-blue_in_house_2 v -white_in_house_2)
+(-blue_in_house_2 v -green_in_house_2)
+(-blue_in_house_2 v -yellow_in_house_2)
+red_in_house_3 v white_in_house_3 v green_in_house_3 v yellow_in_house_3 v blue_in_house_3
+(-white_in_house_3 v -red_in_house_3)
+(-green_in_house_3 v -red_in_house_3)
+(-green_in_house_3 v -white_in_house_3)
+(-yellow_in_house_3 v -red_in_house_3)
+(-yellow_in_house_3 v -white_in_house_3)
+(-yellow_in_house_3 v -green_in_house_3)
+(-blue_in_house_3 v -red_in_house_3)
+(-blue_in_house_3 v -white_in_house_3)
+(-blue_in_house_3 v -green_in_house_3)
+(-blue_in_house_3 v -yellow_in_house_3)
+red_in_house_4 v white_in_house_4 v green_in_house_4 v yellow_in_house_4 v blue_in_house_4
+(-white_in_house_4 v -red_in_house_4)
+(-green_in_house_4 v -red_in_house_4)
+(-green_in_house_4 v -white_in_house_4)
+(-yellow_in_house_4 v -red_in_house_4)
+(-yellow_in_house_4 v -white_in_house_4)
+(-yellow_in_house_4 v -green_in_house_4)
+(-blue_in_house_4 v -red_in_house_4)
+(-blue_in_house_4 v -white_in_house_4)
+(-blue_in_house_4 v -green_in_house_4)
+(-blue_in_house_4 v -yellow_in_house_4)
+red_in_house_5 v white_in_house_5 v green_in_house_5 v yellow_in_house_5 v blue_in_house_5
+(-white_in_house_5 v -red_in_house_5)
+(-green_in_house_5 v -red_in_house_5)
+(-green_in_house_5 v -white_in_house_5)
+(-yellow_in_house_5 v -red_in_house_5)
+(-yellow_in_house_5 v -white_in_house_5)
+(-yellow_in_house_5 v -green_in_house_5)
+(-blue_in_house_5 v -red_in_house_5)
+(-blue_in_house_5 v -white_in_house_5)
+(-blue_in_house_5 v -green_in_house_5)
+(-blue_in_house_5 v -yellow_in_house_5)
+pall_in_house_1 v pall_in_house_2 v pall_in_house_3 v pall_in_house_4 v pall_in_house_5
+(-pall_in_house_2 v -pall_in_house_1)
+(-pall_in_house_3 v -pall_in_house_1)
+(-pall_in_house_3 v -pall_in_house_2)
+(-pall_in_house_4 v -pall_in_house_1)
+(-pall_in_house_4 v -pall_in_house_2)
+(-pall_in_house_4 v -pall_in_house_3)
+(-pall_in_house_5 v -pall_in_house_1)
+(-pall_in_house_5 v -pall_in_house_2)
+(-pall_in_house_5 v -pall_in_house_3)
+(-pall_in_house_5 v -pall_in_house_4)
+dunhill_in_house_1 v dunhill_in_house_2 v dunhill_in_house_3 v dunhill_in_house_4 v dunhill_in_house_5
+(-dunhill_in_house_2 v -dunhill_in_house_1)
+(-dunhill_in_house_3 v -dunhill_in_house_1)
+(-dunhill_in_house_3 v -dunhill_in_house_2)
+(-dunhill_in_house_4 v -dunhill_in_house_1)
+(-dunhill_in_house_4 v -dunhill_in_house_2)
+(-dunhill_in_house_4 v -dunhill_in_house_3)
+(-dunhill_in_house_5 v -dunhill_in_house_1)
+(-dunhill_in_house_5 v -dunhill_in_house_2)
+(-dunhill_in_house_5 v -dunhill_in_house_3)
+(-dunhill_in_house_5 v -dunhill_in_house_4)
+blend_in_house_1 v blend_in_house_2 v blend_in_house_3 v blend_in_house_4 v blend_in_house_5
+(-blend_in_house_2 v -blend_in_house_1)
+(-blend_in_house_3 v -blend_in_house_1)
+(-blend_in_house_3 v -blend_in_house_2)
+(-blend_in_house_4 v -blend_in_house_1)
+(-blend_in_house_4 v -blend_in_house_2)
+(-blend_in_house_4 v -blend_in_house_3)
+(-blend_in_house_5 v -blend_in_house_1)
+(-blend_in_house_5 v -blend_in_house_2)
+(-blend_in_house_5 v -blend_in_house_3)
+(-blend_in_house_5 v -blend_in_house_4)
+bluemaster_in_house_1 v bluemaster_in_house_2 v bluemaster_in_house_3 v bluemaster_in_house_4 v bluemaster_in_house_5
+(-bluemaster_in_house_2 v -bluemaster_in_house_1)
+(-bluemaster_in_house_3 v -bluemaster_in_house_1)
+(-bluemaster_in_house_3 v -bluemaster_in_house_2)
+(-bluemaster_in_house_4 v -bluemaster_in_house_1)
+(-bluemaster_in_house_4 v -bluemaster_in_house_2)
+(-bluemaster_in_house_4 v -bluemaster_in_house_3)
+(-bluemaster_in_house_5 v -bluemaster_in_house_1)
+(-bluemaster_in_house_5 v -bluemaster_in_house_2)
+(-bluemaster_in_house_5 v -bluemaster_in_house_3)
+(-bluemaster_in_house_5 v -bluemaster_in_house_4)
+prince_in_house_1 v prince_in_house_2 v prince_in_house_3 v prince_in_house_4 v prince_in_house_5
+(-prince_in_house_2 v -prince_in_house_1)
+(-prince_in_house_3 v -prince_in_house_1)
+(-prince_in_house_3 v -prince_in_house_2)
+(-prince_in_house_4 v -prince_in_house_1)
+(-prince_in_house_4 v -prince_in_house_2)
+(-prince_in_house_4 v -prince_in_house_3)
+(-prince_in_house_5 v -prince_in_house_1)
+(-prince_in_house_5 v -prince_in_house_2)
+(-prince_in_house_5 v -prince_in_house_3)
+(-prince_in_house_5 v -prince_in_house_4)
+pall_in_house_1 v dunhill_in_house_1 v blend_in_house_1 v bluemaster_in_house_1 v prince_in_house_1
+(-dunhill_in_house_1 v -pall_in_house_1)
+(-blend_in_house_1 v -pall_in_house_1)
+(-blend_in_house_1 v -dunhill_in_house_1)
+(-bluemaster_in_house_1 v -pall_in_house_1)
+(-bluemaster_in_house_1 v -dunhill_in_house_1)
+(-bluemaster_in_house_1 v -blend_in_house_1)
+(-prince_in_house_1 v -pall_in_house_1)
+(-prince_in_house_1 v -dunhill_in_house_1)
+(-prince_in_house_1 v -blend_in_house_1)
+(-prince_in_house_1 v -bluemaster_in_house_1)
+pall_in_house_2 v dunhill_in_house_2 v blend_in_house_2 v bluemaster_in_house_2 v prince_in_house_2
+(-dunhill_in_house_2 v -pall_in_house_2)
+(-blend_in_house_2 v -pall_in_house_2)
+(-blend_in_house_2 v -dunhill_in_house_2)
+(-bluemaster_in_house_2 v -pall_in_house_2)
+(-bluemaster_in_house_2 v -dunhill_in_house_2)
+(-bluemaster_in_house_2 v -blend_in_house_2)
+(-prince_in_house_2 v -pall_in_house_2)
+(-prince_in_house_2 v -dunhill_in_house_2)
+(-prince_in_house_2 v -blend_in_house_2)
+(-prince_in_house_2 v -bluemaster_in_house_2)
+pall_in_house_3 v dunhill_in_house_3 v blend_in_house_3 v bluemaster_in_house_3 v prince_in_house_3
+(-dunhill_in_house_3 v -pall_in_house_3)
+(-blend_in_house_3 v -pall_in_house_3)
+(-blend_in_house_3 v -dunhill_in_house_3)
+(-bluemaster_in_house_3 v -pall_in_house_3)
+(-bluemaster_in_house_3 v -dunhill_in_house_3)
+(-bluemaster_in_house_3 v -blend_in_house_3)
+(-prince_in_house_3 v -pall_in_house_3)
+(-prince_in_house_3 v -dunhill_in_house_3)
+(-prince_in_house_3 v -blend_in_house_3)
+(-prince_in_house_3 v -bluemaster_in_house_3)
+pall_in_house_4 v dunhill_in_house_4 v blend_in_house_4 v bluemaster_in_house_4 v prince_in_house_4
+(-dunhill_in_house_4 v -pall_in_house_4)
+(-blend_in_house_4 v -pall_in_house_4)
+(-blend_in_house_4 v -dunhill_in_house_4)
+(-bluemaster_in_house_4 v -pall_in_house_4)
+(-bluemaster_in_house_4 v -dunhill_in_house_4)
+(-bluemaster_in_house_4 v -blend_in_house_4)
+(-prince_in_house_4 v -pall_in_house_4)
+(-prince_in_house_4 v -dunhill_in_house_4)
+(-prince_in_house_4 v -blend_in_house_4)
+(-prince_in_house_4 v -bluemaster_in_house_4)
+pall_in_house_5 v dunhill_in_house_5 v blend_in_house_5 v bluemaster_in_house_5 v prince_in_house_5
+(-dunhill_in_house_5 v -pall_in_house_5)
+(-blend_in_house_5 v -pall_in_house_5)
+(-blend_in_house_5 v -dunhill_in_house_5)
+(-bluemaster_in_house_5 v -pall_in_house_5)
+(-bluemaster_in_house_5 v -dunhill_in_house_5)
+(-bluemaster_in_house_5 v -blend_in_house_5)
+(-prince_in_house_5 v -pall_in_house_5)
+(-prince_in_house_5 v -dunhill_in_house_5)
+(-prince_in_house_5 v -blend_in_house_5)
+(-prince_in_house_5 v -bluemaster_in_house_5)
+dog_in_house_1 v dog_in_house_2 v dog_in_house_3 v dog_in_house_4 v dog_in_house_5
+(-dog_in_house_2 v -dog_in_house_1)
+(-dog_in_house_3 v -dog_in_house_1)
+(-dog_in_house_3 v -dog_in_house_2)
+(-dog_in_house_4 v -dog_in_house_1)
+(-dog_in_house_4 v -dog_in_house_2)
+(-dog_in_house_4 v -dog_in_house_3)
+(-dog_in_house_5 v -dog_in_house_1)
+(-dog_in_house_5 v -dog_in_house_2)
+(-dog_in_house_5 v -dog_in_house_3)
+(-dog_in_house_5 v -dog_in_house_4)
+cat_in_house_1 v cat_in_house_2 v cat_in_house_3 v cat_in_house_4 v cat_in_house_5
+(-cat_in_house_2 v -cat_in_house_1)
+(-cat_in_house_3 v -cat_in_house_1)
+(-cat_in_house_3 v -cat_in_house_2)
+(-cat_in_house_4 v -cat_in_house_1)
+(-cat_in_house_4 v -cat_in_house_2)
+(-cat_in_house_4 v -cat_in_house_3)
+(-cat_in_house_5 v -cat_in_house_1)
+(-cat_in_house_5 v -cat_in_house_2)
+(-cat_in_house_5 v -cat_in_house_3)
+(-cat_in_house_5 v -cat_in_house_4)
+horse_in_house_1 v horse_in_house_2 v horse_in_house_3 v horse_in_house_4 v horse_in_house_5
+(-horse_in_house_2 v -horse_in_house_1)
+(-horse_in_house_3 v -horse_in_house_1)
+(-horse_in_house_3 v -horse_in_house_2)
+(-horse_in_house_4 v -horse_in_house_1)
+(-horse_in_house_4 v -horse_in_house_2)
+(-horse_in_house_4 v -horse_in_house_3)
+(-horse_in_house_5 v -horse_in_house_1)
+(-horse_in_house_5 v -horse_in_house_2)
+(-horse_in_house_5 v -horse_in_house_3)
+(-horse_in_house_5 v -horse_in_house_4)
+bird_in_house_1 v bird_in_house_2 v bird_in_house_3 v bird_in_house_4 v bird_in_house_5
+(-bird_in_house_2 v -bird_in_house_1)
+(-bird_in_house_3 v -bird_in_house_1)
+(-bird_in_house_3 v -bird_in_house_2)
+(-bird_in_house_4 v -bird_in_house_1)
+(-bird_in_house_4 v -bird_in_house_2)
+(-bird_in_house_4 v -bird_in_house_3)
+(-bird_in_house_5 v -bird_in_house_1)
+(-bird_in_house_5 v -bird_in_house_2)
+(-bird_in_house_5 v -bird_in_house_3)
+(-bird_in_house_5 v -bird_in_house_4)
+fish_in_house_1 v fish_in_house_2 v fish_in_house_3 v fish_in_house_4 v fish_in_house_5
+(-fish_in_house_2 v -fish_in_house_1)
+(-fish_in_house_3 v -fish_in_house_1)
+(-fish_in_house_3 v -fish_in_house_2)
+(-fish_in_house_4 v -fish_in_house_1)
+(-fish_in_house_4 v -fish_in_house_2)
+(-fish_in_house_4 v -fish_in_house_3)
+(-fish_in_house_5 v -fish_in_house_1)
+(-fish_in_house_5 v -fish_in_house_2)
+(-fish_in_house_5 v -fish_in_house_3)
+(-fish_in_house_5 v -fish_in_house_4)
+dog_in_house_1 v cat_in_house_1 v horse_in_house_1 v bird_in_house_1 v fish_in_house_1
+(-cat_in_house_1 v -dog_in_house_1)
+(-horse_in_house_1 v -dog_in_house_1)
+(-horse_in_house_1 v -cat_in_house_1)
+(-bird_in_house_1 v -dog_in_house_1)
+(-bird_in_house_1 v -cat_in_house_1)
+(-bird_in_house_1 v -horse_in_house_1)
+(-fish_in_house_1 v -dog_in_house_1)
+(-fish_in_house_1 v -cat_in_house_1)
+(-fish_in_house_1 v -horse_in_house_1)
+(-fish_in_house_1 v -bird_in_house_1)
+dog_in_house_2 v cat_in_house_2 v horse_in_house_2 v bird_in_house_2 v fish_in_house_2
+(-cat_in_house_2 v -dog_in_house_2)
+(-horse_in_house_2 v -dog_in_house_2)
+(-horse_in_house_2 v -cat_in_house_2)
+(-bird_in_house_2 v -dog_in_house_2)
+(-bird_in_house_2 v -cat_in_house_2)
+(-bird_in_house_2 v -horse_in_house_2)
+(-fish_in_house_2 v -dog_in_house_2)
+(-fish_in_house_2 v -cat_in_house_2)
+(-fish_in_house_2 v -horse_in_house_2)
+(-fish_in_house_2 v -bird_in_house_2)
+dog_in_house_3 v cat_in_house_3 v horse_in_house_3 v bird_in_house_3 v fish_in_house_3
+(-cat_in_house_3 v -dog_in_house_3)
+(-horse_in_house_3 v -dog_in_house_3)
+(-horse_in_house_3 v -cat_in_house_3)
+(-bird_in_house_3 v -dog_in_house_3)
+(-bird_in_house_3 v -cat_in_house_3)
+(-bird_in_house_3 v -horse_in_house_3)
+(-fish_in_house_3 v -dog_in_house_3)
+(-fish_in_house_3 v -cat_in_house_3)
+(-fish_in_house_3 v -horse_in_house_3)
+(-fish_in_house_3 v -bird_in_house_3)
+dog_in_house_4 v cat_in_house_4 v horse_in_house_4 v bird_in_house_4 v fish_in_house_4
+(-cat_in_house_4 v -dog_in_house_4)
+(-horse_in_house_4 v -dog_in_house_4)
+(-horse_in_house_4 v -cat_in_house_4)
+(-bird_in_house_4 v -dog_in_house_4)
+(-bird_in_house_4 v -cat_in_house_4)
+(-bird_in_house_4 v -horse_in_house_4)
+(-fish_in_house_4 v -dog_in_house_4)
+(-fish_in_house_4 v -cat_in_house_4)
+(-fish_in_house_4 v -horse_in_house_4)
+(-fish_in_house_4 v -bird_in_house_4)
+dog_in_house_5 v cat_in_house_5 v horse_in_house_5 v bird_in_house_5 v fish_in_house_5
+(-cat_in_house_5 v -dog_in_house_5)
+(-horse_in_house_5 v -dog_in_house_5)
+(-horse_in_house_5 v -cat_in_house_5)
+(-bird_in_house_5 v -dog_in_house_5)
+(-bird_in_house_5 v -cat_in_house_5)
+(-bird_in_house_5 v -horse_in_house_5)
+(-fish_in_house_5 v -dog_in_house_5)
+(-fish_in_house_5 v -cat_in_house_5)
+(-fish_in_house_5 v -horse_in_house_5)
+(-fish_in_house_5 v -bird_in_house_5)
+(- brit_in_house_1 v red_in_house_1)
+(- brit_in_house_2 v red_in_house_2)
+(- brit_in_house_3 v red_in_house_3)
+(- brit_in_house_4 v red_in_house_4)
+(- brit_in_house_5 v red_in_house_5)
+(- swede_in_house_1 v dog_in_house_1)
+(- swede_in_house_2 v dog_in_house_2)
+(- swede_in_house_3 v dog_in_house_3)
+(- swede_in_house_4 v dog_in_house_4)
+(- swede_in_house_5 v dog_in_house_5)
+(- dane_in_house_1 v tea_in_house_1)
+(- dane_in_house_2 v tea_in_house_2)
+(- dane_in_house_3 v tea_in_house_3)
+(- dane_in_house_4 v tea_in_house_4)
+(- dane_in_house_5 v tea_in_house_5)
+(- green_in_house_1 v white_in_house_2)
+(- green_in_house_2 v white_in_house_3)
+(- green_in_house_3 v white_in_house_4)
+(- green_in_house_4 v white_in_house_5)
+- green_in_house_5
+(- green_in_house_1 v coffee_in_house_1)
+(- green_in_house_2 v coffee_in_house_2)
+(- green_in_house_3 v coffee_in_house_3)
+(- green_in_house_4 v coffee_in_house_4)
+(- green_in_house_5 v coffee_in_house_5)
+(- pall_in_house_1 v bird_in_house_1)
+(- pall_in_house_2 v bird_in_house_2)
+(- pall_in_house_3 v bird_in_house_3)
+(- pall_in_house_4 v bird_in_house_4)
+(- pall_in_house_5 v bird_in_house_5)
+(- yellow_in_house_1 v dunhill_in_house_1)
+(- yellow_in_house_2 v dunhill_in_house_2)
+(- yellow_in_house_3 v dunhill_in_house_3)
+(- yellow_in_house_4 v dunhill_in_house_4)
+(- yellow_in_house_5 v dunhill_in_house_5)
+milk_in_house_3
+norwegian_in_house_1
+(- blend_in_house_2 v cat_in_house_3 v cat_in_house_1)
+(- blend_in_house_3 v cat_in_house_4 v cat_in_house_2)
+(- blend_in_house_4 v cat_in_house_5 v cat_in_house_3)
+(- blend_in_house_1 v cat_in_house_2)
+(- blend_in_house_5 v cat_in_house_4)
+(- horse_in_house_2 v dunhill_in_house_3 v dunhill_in_house_1)
+(- horse_in_house_3 v dunhill_in_house_4 v dunhill_in_house_2)
+(- horse_in_house_4 v dunhill_in_house_5 v dunhill_in_house_3)
+(- horse_in_house_1 v dunhill_in_house_2)
+(- horse_in_house_5 v dunhill_in_house_4)
+(- bluemaster_in_house_1 v beer_in_house_1)
+(- bluemaster_in_house_2 v beer_in_house_2)
+(- bluemaster_in_house_3 v beer_in_house_3)
+(- bluemaster_in_house_4 v beer_in_house_4)
+(- bluemaster_in_house_5 v beer_in_house_5)
+(- german_in_house_1 v prince_in_house_1)
+(- german_in_house_2 v prince_in_house_2)
+(- german_in_house_3 v prince_in_house_3)
+(- german_in_house_4 v prince_in_house_4)
+(- german_in_house_5 v prince_in_house_5)
+(- norwegian_in_house_2 v blue_in_house_3 v blue_in_house_1)
+(- norwegian_in_house_3 v blue_in_house_4 v blue_in_house_2)
+(- norwegian_in_house_4 v blue_in_house_5 v blue_in_house_3)
+(- norwegian_in_house_1 v blue_in_house_2)
+(- norwegian_in_house_5 v blue_in_house_4)
+(- blend_in_house_2 v water_in_house_3 v water_in_house_1)
+(- blend_in_house_3 v water_in_house_4 v water_in_house_2)
+(- blend_in_house_4 v water_in_house_5 v water_in_house_3)
+(- blend_in_house_1 v water_in_house_2)
+(- blend_in_house_5 v water_in_house_4)
