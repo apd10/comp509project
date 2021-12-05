@@ -5,6 +5,10 @@
 #include <string.h>
 #include <vector>
 #include <set>
+#include <chrono>
+#include <assert.h>
+#include <unordered_map>
+
 
 using namespace std;
 
@@ -23,13 +27,31 @@ class Problem {
       int * proposed_proposition;
       int * truth_assignment;
       vector<int> * unassigned_propositions;
+      enum splitting_protocol_enum
+      {   
+          ENUM_FIRST,
+          ENUM_RANDOM,
+          ENUM_OCCUR2,
+          ENUM_MAX
+      };
+      splitting_protocol_enum splitting_protocol;
 
-      Problem(vector<int> * _values, int * _idx, int _n, int _m) : values(_values), idx(_idx), m(_m), n(_n){ 
+      // for stats
+      int num_splitting_applications;
+      int num_random_splits;
+      int num_single_applications;
+      double time_taken;
+
+      Problem(vector<int> * _values, int * _idx, int _n, int _m, splitting_protocol_enum sp) 
+          : values(_values), idx(_idx), m(_m), n(_n), splitting_protocol(sp){ 
           clause_evaluations = new int[m];
           active_counts = new int[m];
           proposed_proposition = new int[m];
           truth_assignment = new int[n+1];
           unassigned_propositions = new vector<int>();
+          num_splitting_applications = 0;
+          num_random_splits = 0;
+
           for ( int i=1 ; i < n + 1; i++ ) {
               truth_assignment[i] = -2; // unassigned
           }
@@ -52,6 +74,7 @@ class Problem {
                           unassigned_propositions->push_back(i);
           }
       }
+
 
       ~Problem() {
           delete clause_evaluations;
@@ -93,17 +116,27 @@ class Problem {
       }
 
       void solve() {
-
+          srand(1);
+          num_splitting_applications = 0;
+          num_random_splits = 0;
+          num_single_applications = 0;
+          auto t_start  = std::chrono::high_resolution_clock::now();
           bool res = dpll();
+          auto t_end  = std::chrono::high_resolution_clock::now();
+          time_taken = chrono::duration<double, std::milli>(t_end - t_start).count();
+
           if ( res) {
-                  printf("SAT\n");
+
+                  printf("SAT time: %f ms, num_single: %d num_split: %d num_rand: %d\n", time_taken, num_single_applications, num_splitting_applications, num_random_splits);
+                  /*      
                   printf("0 : false, 1: true, -1: don't care \n");
                   for(int i=1; i < n+1; i++) {
-                          if(truth_assignment[i] != -2)
+                          //if(truth_assignment[i] != -2)
                               printf(" %d %d \n", i, truth_assignment[i]);
-                  }
+                  }*/
           } else  {
-              printf("UNSAT\n");
+
+                  printf("UNSAT time: %f ms, num_single %d num_split: %d num_rand: %d\n", time_taken, num_single_applications, num_splitting_applications, num_random_splits);
           }
       }
 
@@ -147,14 +180,16 @@ class Problem {
             } else {
                 if (active_counts[i] == 0) {
                     clause_evaluations[i] = 0;
-                    //printf("clause failed %d\n", i);
+                    ////printf("clause failed %d\n", i);
                     negative ++;
                 } else {
                     incomplete ++;
                 }
             }
+
+        //printf("clause: %d evaluated to : %d\n", i, clause_evaluations[i]);
         }
-        //printf("pos: %d, neg:%d, inc:%d m:%d\n",positive, negative, incomplete, m);
+        ////printf("pos: %d, neg:%d, inc:%d m:%d\n",positive, negative, incomplete, m);
         if (negative > 0) {
           return 0;
         } else if ( incomplete > 0) {
@@ -164,13 +199,71 @@ class Problem {
         }
       }
 
+      int get_maxoccur(int desired_count) {
+          std::unordered_map<int, int> counts;
+          int max_count = 0;
+          int p;
+          for (int i=0; i < m; i++ ){
+              if( active_counts[i] == desired_count) {
+                ////printf("clause:%d has 2 active\n", i);
+                 for(int j = idx[i]; j < idx[i+1];j++) {
+                    p= abs((*values)[j]);
+                    if(truth_assignment[p] == -1) {
+                        if(counts.find(p) == counts.end()) {
+                            counts[p] = 1;
+                        }else {
+                            counts[p] ++;
+                        }
+                        max_count = max(max_count, counts[p]);
+                        ////printf("updated %d - %d\n", p, counts[p]);
+                    }
+                } 
+              }
+          }
+          vector<int> props ;
+          for(auto itr = counts.begin(); itr!=counts.end(); itr++) {
+              ////printf("1. %d %d\n", itr->first, itr->second);
+              if(itr->second == max_count){
+              ////printf(" -- selected\n");
+                  props.push_back(itr->first);
+              }       
+           }
+
+          if (props.size() > 0) {
+              //char c; //printf(">>\n");scanf("%c", &c);
+              return props[rand() % props.size()];
+          }
+          else {
+              return -1;
+          }
+      }
+      
+      int get_random() {
+              int temp = rand() % unassigned_propositions->size();
+              int prop = (*unassigned_propositions)[temp];
+              return prop;
+      }
+
+
+      bool safeexit(bool returnvalue, vector<int> &propositions_set) {
+              if ( not returnvalue) {
+                      for(int i = 0 ; i < propositions_set.size(); i++) {
+                              truth_assignment[propositions_set[i]] = -1;
+                      }
+              }
+              return returnvalue;
+      }
+
       bool dpll() {
           //print_ta();
           //char c;
           int eval = evaluate_cat();
           if (eval == 0) {
+              //printf("exit1\n");
               return false;
           } else if (eval == 1) {
+
+              //printf("exit2\n");
               return true;
           }
 
@@ -185,13 +278,14 @@ class Problem {
                   changed = false;
                   for (int i=0; i < m; i++ ){
                           if (active_counts[i] == 1) {
+                                  num_single_applications += 1;
                                   lt = proposed_proposition[i];
                                   p = (lt < 0) ? -lt: lt;
                                   truth = (lt > 0) ? 1 : 0;
 
                                   //printf("single : setting %d for %d in accordance with clause %d \n", truth, p, i); 
                                   if ( truth_assignment[p] != -1 and truth_assignment[p] != truth) {
-                                          //printf("Issue in assignment 1 : %d \n", p);
+                                          ////printf("Issue in assignment 1 : %d \n", p);
                                           allok = false;
                                           break;
                                   }
@@ -206,57 +300,93 @@ class Problem {
                   if (changed) {
                           eval = evaluate_cat();
                           if (eval == 0) {
-                                  return false;
+                                  //printf("exit3\n");
+                                  return safeexit(false, propositions_set);
                           } else if (eval == 1) {
-                                  return true;
+
+                                  //printf("exit4\n");
+                                  return safeexit(true, propositions_set);
                           }
                   }
           }
           if ( not allok ) {
               // reset the propositions set and return
-              for(int i = 0 ; i < propositions_set.size(); i++) {
-                  truth_assignment[propositions_set[i]] = -1;
-              }
-              return false;
+              //printf("exit5\n");
+              return safeexit(false, propositions_set);
           }
           
           eval = evaluate_cat();
           if (eval == 0) {
-              return false;
+              //printf("exit6\n");
+              return safeexit(false, propositions_set);;
           } else if (eval == 1) {
-              return true;
+
+              //printf("exit7\n");
+              return safeexit(true, propositions_set);
+
           }
 
           //print_problem(); scanf("%c", &c);
+          num_splitting_applications += 1;
+          int prop = (*unassigned_propositions)[0]; 
+          int temp = 0;
+          switch(splitting_protocol) {
+              case ENUM_FIRST:
+                  prop =( *unassigned_propositions)[0];
+                  break;
+              case ENUM_RANDOM:
+                  prop = get_random();
+                  break;
+              case ENUM_OCCUR2:
+                  // select the proposition that appears most in 2-occur
+                  // this logic is not implemented in the evaluate_cat because we should not
+                  // penalise other methods for this strategy
+                  prop = get_maxoccur(2);
+                  if (prop == -1) {
+                      prop = get_maxoccur(3);
+                      if (prop == -1) {
+                        num_random_splits += 1;
+                        prop = get_random();
+                      }
+                  }
+                  break;
           
-          int prop = (*unassigned_propositions)[0];
+              default:  
+                  assert(false);
+                  break;
+          }
+          //printf("choosing, %d 1\n", prop);
           truth_assignment[prop] = 1;
           bool val;
           val = dpll();
           if (val) {
-            return true;
+
+            //printf("exit8\n");
+            return safeexit(true, propositions_set);
           }
 
           truth_assignment[prop] = 0;
+
+          //printf("choosing, %d 0\n", prop);
           val = dpll();
           if (val) {
-            return true;
+            //printf("exit9\n");
+            return safeexit(true, propositions_set);
           }
         
           // reset everything
           truth_assignment[prop] = -1;
-          for(int i = 0 ; i < propositions_set.size(); i++) {
-                  truth_assignment[propositions_set[i]] = -1;
-          }
-          return false;
+          //printf("unsetting %d\n", prop);
+          //printf("exit10\n");
+          return safeexit(false, propositions_set);
       }
 };
 
 
 
 int main(int argc, char ** argv) {
-    if (argc < 2) {
-        printf("usage : <commandline> <file.in>\n");
+    if (argc < 3) {
+        printf("usage : <commandline> <file.in> <protocol>\n");
         printf("use sat format in the file.in\n");
         printf("Output : <var, value>\n");
         printf("0 : false, 1: true, -1: don't care, -2 : does not appear");
@@ -270,7 +400,23 @@ int main(int argc, char ** argv) {
     int * idx = NULL;
     int n;
     int m;
+    Problem::splitting_protocol_enum splitting_protocol;
     ifstream infile (argv[1]);
+    int enidx = atoi(argv[2]);
+    switch(enidx) {
+            case 0:
+                    splitting_protocol = Problem::ENUM_FIRST;
+                    break;
+            case 1:
+                    splitting_protocol = Problem::ENUM_RANDOM;
+                    break;
+            case 2:
+                    splitting_protocol = Problem::ENUM_OCCUR2;
+                    break;
+            default:  
+                    printf("Protocol not found\n");
+                    return  0;
+    }
 
     if ( not infile.is_open() ) {
       printf("cannot open file %s\n", argv[1]);
@@ -292,7 +438,7 @@ int main(int argc, char ** argv) {
           if (strcmp(problem_type, "cnf") != 0) {
               printf("problem type not recognized\n");
           } {
-              printf(" The problem configuration is %c : %s : %d : %d\n", p, problem_type, n, m);
+              //printf(" The problem configuration is %c : %s : %d : %d\n", p, problem_type, n, m);
           }
 
           // release previous variables
@@ -317,7 +463,7 @@ int main(int argc, char ** argv) {
           }
           // input rest of the line
           getline(infile, line);
-          problem = new Problem(values_vector, idx, n, m);
+          problem = new Problem(values_vector, idx, n, m, splitting_protocol);
           problem->solve();
        } else {
           printf("unrecognized line : %s\n", line.c_str() );
