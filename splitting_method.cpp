@@ -9,7 +9,7 @@
 #include <assert.h>
 #include <unordered_map>
 
-
+#define MIN_MAX_COUNT -1
 using namespace std;
 
 class Problem {
@@ -32,6 +32,8 @@ class Problem {
           ENUM_FIRST,
           ENUM_RANDOM,
           ENUM_OCCUR2,
+          ENUM_OCCUR_MIN_MAX,
+          ENUM_TEST,
           ENUM_MAX
       };
       splitting_protocol_enum splitting_protocol;
@@ -40,6 +42,7 @@ class Problem {
       int num_splitting_applications;
       int num_random_splits;
       int num_single_applications;
+      int num_dpll;
       double time_taken;
 
       Problem(vector<int> * _values, int * _idx, int _n, int _m, splitting_protocol_enum sp) 
@@ -51,6 +54,7 @@ class Problem {
           unassigned_propositions = new vector<int>();
           num_splitting_applications = 0;
           num_random_splits = 0;
+          num_dpll = 0;
 
           for ( int i=1 ; i < n + 1; i++ ) {
               truth_assignment[i] = -2; // unassigned
@@ -120,6 +124,7 @@ class Problem {
           num_splitting_applications = 0;
           num_random_splits = 0;
           num_single_applications = 0;
+          num_dpll = 0;
           auto t_start  = std::chrono::high_resolution_clock::now();
           bool res = dpll();
           auto t_end  = std::chrono::high_resolution_clock::now();
@@ -127,7 +132,7 @@ class Problem {
 
           if ( res) {
 
-                  printf("SAT time: %f ms, num_single: %d num_split: %d num_rand: %d\n", time_taken, num_single_applications, num_splitting_applications, num_random_splits);
+                  printf("SAT time: %f ms, num_single: %d num_split: %d num_rand: %d num_dpll:%d\n", time_taken, num_single_applications, num_splitting_applications, num_random_splits, num_dpll);
                   /*      
                   printf("0 : false, 1: true, -1: don't care \n");
                   for(int i=1; i < n+1; i++) {
@@ -136,7 +141,7 @@ class Problem {
                   }*/
           } else  {
 
-                  printf("UNSAT time: %f ms, num_single %d num_split: %d num_rand: %d\n", time_taken, num_single_applications, num_splitting_applications, num_random_splits);
+                  printf("UNSAT time: %f ms, num_single %d num_split: %d num_rand: %d num_dpll:%d\n", time_taken, num_single_applications, num_splitting_applications, num_random_splits, num_dpll);
           }
       }
 
@@ -198,21 +203,76 @@ class Problem {
           return 1;
         }
       }
+      int get_test() {
+          std::unordered_map<int, int> indv_counts;
+          int plt;
+          for (int i=0; i < m; i++ ){
+                  if( active_counts[i] > 0) {
+                          for(int j = idx[i]; j < idx[i+1];j++) {
+                                  plt = (*values)[j];
+                                  if(truth_assignment[abs(plt)] == -1) {
+                                          if(indv_counts.find(plt) == indv_counts.end()) {
+                                                  indv_counts[plt] = 1;
+                                          }else {
+                                                  indv_counts[plt] ++;
+                                          }
+                                  }
+                          } 
+                  }
+          }
+          int prop = 0;
+          int retprop = 0;
+          int maxcounts = 0;
+          for(int i=0; i <unassigned_propositions->size(); i++) {
+              prop = (*unassigned_propositions)[i];
+              if(indv_counts.find(prop) == indv_counts.end()) {
+                      if(maxcounts < indv_counts[-prop]) {
+                              maxcounts = max(maxcounts, indv_counts[-prop]);
+                              retprop = -prop;
+                      }
+              } 
+              if(indv_counts.find(-prop) == indv_counts.end()) {
+                      if(maxcounts < indv_counts[prop]) {
+                              maxcounts = max(maxcounts, indv_counts[prop]);
+                              retprop = prop;
+                      }
+              } 
+          }
+          return retprop;
+      }
 
       int get_maxoccur(int desired_count) {
+          if( desired_count == MIN_MAX_COUNT) {
+              // decide the desrived count
+              desired_count = n; // max is number of vars
+              for(int i=0;i<m;i++) {
+                  if(active_counts[i] > 0) {
+                      desired_count = min(desired_count, active_counts[i]);
+                  }
+              }
+          }
           std::unordered_map<int, int> counts;
+          std::unordered_map<int, int> indv_counts;
           int max_count = 0;
           int p;
+          int plt;
           for (int i=0; i < m; i++ ){
               if( active_counts[i] == desired_count) {
                 ////printf("clause:%d has 2 active\n", i);
                  for(int j = idx[i]; j < idx[i+1];j++) {
                     p= abs((*values)[j]);
+                    plt = (*values)[j];
                     if(truth_assignment[p] == -1) {
                         if(counts.find(p) == counts.end()) {
                             counts[p] = 1;
                         }else {
                             counts[p] ++;
+                        }
+
+                        if(indv_counts.find(plt) == indv_counts.end()) {
+                            indv_counts[plt] = 1;
+                        }else {
+                            indv_counts[plt] ++;
                         }
                         max_count = max(max_count, counts[p]);
                         ////printf("updated %d - %d\n", p, counts[p]);
@@ -231,10 +291,17 @@ class Problem {
 
           if (props.size() > 0) {
               //char c; //printf(">>\n");scanf("%c", &c);
-              return props[rand() % props.size()];
+              int myprop =  props[rand() % props.size()];
+              if(indv_counts.find(-myprop) == indv_counts.end()) {
+                   return myprop;
+              } else if(indv_counts.find(myprop) == indv_counts.end()) {
+                   return -myprop;
+              } else {
+                  return (indv_counts[myprop] > indv_counts[-myprop] ? myprop : -myprop);
+              }
           }
           else {
-              return -1;
+              return 0;
           }
       }
       
@@ -255,6 +322,7 @@ class Problem {
       }
 
       bool dpll() {
+          num_dpll ++;
           //print_ta();
           //char c;
           int eval = evaluate_cat();
@@ -330,6 +398,7 @@ class Problem {
           num_splitting_applications += 1;
           int prop = (*unassigned_propositions)[0]; 
           int temp = 0;
+          int first_assignment = rand() %2;
           switch(splitting_protocol) {
               case ENUM_FIRST:
                   prop =( *unassigned_propositions)[0];
@@ -342,38 +411,48 @@ class Problem {
                   // this logic is not implemented in the evaluate_cat because we should not
                   // penalise other methods for this strategy
                   prop = get_maxoccur(2);
-                  if (prop == -1) {
-                      prop = get_maxoccur(3);
-                      if (prop == -1) {
-                        num_random_splits += 1;
-                        prop = get_random();
-                      }
+                  if (prop == 0) {
+                          num_random_splits += 1;
+                          prop = get_random();
                   }
+                  prop = abs(prop);
                   break;
-          
+              case ENUM_OCCUR_MIN_MAX:
+                  prop = get_maxoccur(MIN_MAX_COUNT);
+                  if(prop < 0) {
+                      first_assignment = 0; 
+                      prop = abs(prop);
+                  } else {
+                      first_assignment = 1;
+                  }   
+                  break;
+
+              case ENUM_TEST:
+                  prop = ( *unassigned_propositions)[0];
+                  break;
               default:  
                   assert(false);
                   break;
           }
-          //printf("choosing, %d 1\n", prop);
-          truth_assignment[prop] = 1;
+
+          //printf("choosing %d 1\n", prop);
+          truth_assignment[prop] = first_assignment;
           bool val;
           val = dpll();
           if (val) {
-
             //printf("exit8\n");
             return safeexit(true, propositions_set);
           }
 
-          truth_assignment[prop] = 0;
+          truth_assignment[prop] = 1 - first_assignment;
 
           //printf("choosing, %d 0\n", prop);
           val = dpll();
           if (val) {
-            //printf("exit9\n");
-            return safeexit(true, propositions_set);
+                  //printf("exit9\n");
+                  return safeexit(true, propositions_set);
           }
-        
+
           // reset everything
           truth_assignment[prop] = -1;
           //printf("unsetting %d\n", prop);
@@ -389,7 +468,7 @@ int main(int argc, char ** argv) {
         printf("usage : <commandline> <file.in> <protocol>\n");
         printf("use sat format in the file.in\n");
         printf("Output : <var, value>\n");
-        printf("0 : false, 1: true, -1: don't care, -2 : does not appear");
+        printf("0 : false, 1: true, -1: don't care, -2 : does not appear\n");
         
         return 0;
     }
@@ -412,6 +491,12 @@ int main(int argc, char ** argv) {
                     break;
             case 2:
                     splitting_protocol = Problem::ENUM_OCCUR2;
+                    break;
+            case 3:
+                    splitting_protocol = Problem::ENUM_OCCUR_MIN_MAX;
+                    break;
+            case 4:
+                    splitting_protocol = Problem::ENUM_TEST;
                     break;
             default:  
                     printf("Protocol not found\n");
